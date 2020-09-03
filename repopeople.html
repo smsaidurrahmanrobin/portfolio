@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Users</title>
+</head>
+
+<style >
+    .wrapper {
+        text-align: left;
+    }
+    .wrapper list {
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+        
+        zoom:1;
+        *display: inline;
+    }
+    .wrapper li {
+        float: left;
+        padding: 2px 5px;
+        border: 1px solid black;
+    }
+</style> 
+
+<body>
+    <h1>GitHub Users</h1>
+    <button id="showInfo">Load GitHub Users</button>
+    <div id="showme"></div>
+    <script>
+        document.getElementById("showInfo").addEventListener('click', onProcess);
+
+function onProcess(){
+    var req = new XMLHttpRequest();
+    req.open('GET', 'https://api.github.com/users', true);
+    req.onload = function() {
+        if(req.status==200){
+          var people = JSON.parse(req.responseText)
+          var output= '';
+          for(var i in people){
+           output +=
+           '<div class="wrapper">' +
+           '<img src="'+people[i].avatar_url+'" width="10%" height="10%">'+
+           '<list>' +
+           '<p><li>ID: '+people[i].id+'</li></p>' +
+           '<p><li>Login: '+people[i].login+'</li></p>' +
+           '<p><li>Repos: <a href="'+people[i].repos_url +'" >'+people[i].repos_url +'</a></li></p>'+
+           '<p><li>Organizations: <a href="'+people[i].organizations_url+'" >'+people[i].organizations_url+'</a></li></p>' +
+           '<p><li>Events: <a href="'+people[i].events_url+'">'+people[i].events_url+'</a></li></p>' +
+           '</list>' +
+           '</div>';
+           document.getElementById('showme').innerHTML = output;
+           }
+
+        }
+
+    }
+    req.send();
+}
+    </script>
+</body>
+
+
+</html>
