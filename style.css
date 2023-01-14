@@ -44,26 +44,30 @@ body {
 }
 
 .dp{
-	width: 270px;
-	height: 270px;
-	position: absolute;
+
+	width: 50%;
+	max-width: 200px;
+	height: auto;
 	border: 2px grey solid;
 	border-radius: 13px;
-	bottom: 255px;
-	transform: translateX(320%);
+	position: center;
+
+	
+	
 	
 	
 }
 
 #about {
 	float: left;
-	width: 70%;
+	width: 95%;
 	box-sizing: border-box;
 	margin-top: 15px;
 	margin-left: 0px;
 	border: 2px grey solid;
 	border-radius: 10px;
 	padding: 15px;
+	flex-direction: auto;
 	
 }
 #projects {
