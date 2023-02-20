@@ -132,7 +132,9 @@ body {
   }
   .about{
 	float: left;
-	width: 50%;
+	width: 30%;
+	margin-left: -100px;
+	margin-top: -20px;
   }
   .red-text{
 	color: green;
