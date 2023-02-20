@@ -11,7 +11,10 @@ body {
 	overflow: auto;
 }
 #top-header {
-	background-color:  #008000;
+	height: 200px;
+	background-color: #c83261;
+	/* For browsers that do not support gradients */
+	background-image: linear-gradient(to bottom right, rgb(18, 70, 57), rgb(217, 0, 255));
 
 	color: #fff;
 	text-align: center;
@@ -59,11 +62,11 @@ body {
 
 	width: 50%;
 	max-width: 200px;
-	height: auto;
+	height:max-content ;
 	border: 2px grey solid;
 	border-radius: 13px;
 	position: center;
-
+	overflow: auto;
 
 }
 
@@ -117,3 +120,20 @@ body {
 	padding: 15px;
 	margin-top: 150px;
 }
+
+.column {
+	float: left;
+	width: 33.33%;
+}
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+  }
+  .about{
+	float: left;
+	width: 50%;
+  }
+  .red-text{
+	color: green;
+  }
