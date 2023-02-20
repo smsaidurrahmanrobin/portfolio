@@ -52,10 +52,19 @@ body {
 	border-radius: 13px;
 	position: center;
 
-	
-	
-	
-	
+
+}
+
+.project{
+
+	width: 50%;
+	max-width: 200px;
+	height: auto;
+	border: 2px grey solid;
+	border-radius: 13px;
+	position: center;
+
+
 }
 
 #about {
